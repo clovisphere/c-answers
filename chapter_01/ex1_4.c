@@ -2,7 +2,7 @@
 // Celsius to Fahrenheit table.
 
 #include<stdio.h>
-
+    
 int main(void) {
 	float celsius, fahr;
 	int lower, upper, step;
