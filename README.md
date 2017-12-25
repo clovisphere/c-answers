@@ -1,4 +1,4 @@
-# The_C_Programming_Language_Exercise_Solution
+# The C Programming Language - Exercises solution
 
 Contains my solution to the exercises in [The C Programming Language, 2nd Edition](https://www.amazon.com/C-Programming-Language-2nd-Ed/dp/0131103709/ref=mt_hardcover?_encoding=UTF8&me=) book.
 
