@@ -1,12 +1,11 @@
 #include <stdio.h>
 #include <stdbool.h>
-
 #define SIZE 30 // maximum size of the array
 
 /* histogram of the frequency of different characters in input */
 int main() {
 	int c, count = 0, map[SIZE] = {0};
-	char ch[SIZE] = {'\0'};
+	char ch[SIZE];
 	bool seen = false;
 
 	while ((c = getchar()) != EOF) {
