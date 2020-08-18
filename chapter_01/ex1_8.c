@@ -3,7 +3,7 @@
 // starts program execution
 int main() {
 	int c; // character
-	int nl, bl, tb; // newline, blank, tabs
+	int nl, bl, tb; // newline, blank, tab
 
 	nl = bl = tb = 0;
 	while((c = getchar()) != EOF) {
