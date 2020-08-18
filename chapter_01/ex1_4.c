@@ -13,7 +13,7 @@ int main(void) {
 
     celsius = lower;
 
-    printf("\nCelsius to fahrenheit converter.");
+    printf("\nCelsius to Fahrenheit converter.");
     printf("\n--------------------------------\n\n");
 
     while(celsius <= upper) {
