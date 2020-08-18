@@ -7,7 +7,7 @@
 int main() {
 	int c;
 	while((c = getchar()) != EOF) {
-		// a word is sequence of characters that does not contaion
+		// a word is sequence of characters that does not contain
 		// a blank, tab or newline. 
 		if (c == ' ' || c == '\t' || c == '\n') {
 			printf("\n");
