@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#define SIZE 26 // maximum size of the array
+#define SIZE 30 // maximum size of the array
 
 /* histogram of the frequency of different characters in input */
 int main() {
