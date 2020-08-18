@@ -26,7 +26,7 @@ int main() {
 
 /**
  * How to test the program? 
- *      Test it against a text file e.g data.txt that contains some input.
+ *      Test it against a 'test' file e.g data.txt that contains some input.
  * Bug:
  *  (+) The program considers a line with an input such as: "me (or you)" to be 
  *      made up of 3 distinct words, '(or' is considered a word, so is 'you)'.
