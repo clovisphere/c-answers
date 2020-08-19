@@ -3,15 +3,15 @@
 
 /* function prototype */
 int get_line(char line[], int maxline);
+int remove_trailing_blank(char s[]);
 
-/* prints all input lines that are longer than 80 characters */
+/* remove trailing blanks and tabs, and delete blank lines */
 int main() {
-	int len;           // (current) line length
 	char line[MAXLINE]; // (current) input line
 
-	while ((len = get_line(line, MAXLINE)) > 0) {
-		printf("%s", line);
-	}
+	while (get_line(line, MAXLINE) > 0)
+		if (remove_trailing_blank(line) > 0)
+			printf("%s", line);
 	return 0;
 }
 
@@ -19,7 +19,6 @@ int main() {
 int get_line(char s[], int limit) {
 	int c, i = 0;
 	while (i < limit - 1 && (c = getchar()) != EOF && c != '\n') {
-		if (c == '\t' || ( c == ' ' && i == 0) || (c == ' ' && i == limit - 1) ) continue; /* skip */
 		s[i] = c;
 		++i;
 	}
@@ -28,5 +27,23 @@ int get_line(char s[], int limit) {
 		++i;
 	}
 	s[i] = '\0';
+	return i;
+}
+
+/* remove trailing blanks and tabs from character string s */
+// NOTE TO SELF: a trailing blank is any space or tab before the '\n' (newline) character
+int remove_trailing_blank(char s[]) {
+	int i = 0;
+	while (s[i] != '\n')
+		i++;
+	--i; // back off from '\n'
+	while (i >= 0 && (s[i] == ' ' || s[i] == '\t'))
+		--i;
+	if (i >= 0) {
+		++i;
+		s[i] = '\n'; // put newline character back
+		++i;
+		s[i] = '\0'; // terminate the string
+	}
 	return i;
 }
