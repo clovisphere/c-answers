@@ -32,7 +32,7 @@ int main() {
 		if (map[i] == 0) continue; /* skip */
 		printf("%c: ", ch[i]);
 		for(int j = 0; j < map[i]; j++)
-			printf("*");
+			printf("#");
 		printf("\n");
 	}
 	return 0;
