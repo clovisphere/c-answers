@@ -3,23 +3,17 @@
 
 /* function prototype */
 int get_line(char line[], int maxline);
-void reverse(char to[], char from[], int limit);
-void clear(char s[], int limit);
+void reverse(char s[]);
 
 /* print reversed input line */
 int main() {
 	int len;            // current line length
 	char text[MAXLINE]; // current text input
-	char new[MAXLINE];  // the reversed text input
 
 	while ((len = get_line(text, MAXLINE)) > 0) {
-		reverse(new, text, len);
-		printf("%s", new);
-		/* clean after yourself:-) */
-		clear(text, len);
-		clear(new, len);
+		reverse(text);
+		printf("%s", text);
 	}
-	printf("\n"); // to avoid the weird '%' at the end of the string on Zsh//MacOS
 	return 0;
 }
 
@@ -36,14 +30,23 @@ int get_line(char line[], int maxline) {
 	return i;
 }
 
-/* reverse: take a str ('from[]'), reverse it and save the reversed str to 'to[]' */
-void reverse(char to[], char from[], int limit) {
-	for (int i = limit - 1, j = 0; i >= 0; i--, j++)
-		to[j] = from[i];
-}
-
-/* clear: clear s after use ~> set all its elements' value, up to limit, to '\0' */
-void clear(char s[], int limit) {
-	for (int i = 0; i < limit; i++)
-		s[i] = '\0';
+/* reverse a given str */
+void reverse(char s[]) {
+	int i, j;
+	char temp;
+	
+	i = 0;
+	while (s[i] != '\0')
+		++i;
+	--i;                 // back off from '\0'
+	if (s[i] == '\n')
+		--i;			 // leave newline in place
+	j = 0;               // beginning of new string s
+	while (j < i) {
+		temp = s[j];
+		s[j] = s[i];
+		s[i] = temp;
+		--i;
+		++j;
+	}
 }
