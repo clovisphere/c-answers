@@ -31,7 +31,7 @@ int main() {
 			if (i > words[j])
 				printf("  ");
 			else
-				printf(". ");
+				printf("# ");
 		}
 		printf("\n");
 	}
