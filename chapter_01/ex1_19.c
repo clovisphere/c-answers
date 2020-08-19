@@ -29,8 +29,8 @@ int get_line(char line[], int maxline) {
 		line[i] = c;
 	/* Do I need to add '\n'? Probably not! */
     // if (c == '\n') {
-	//	line[i] = c;
-	// 	++i;
+	//	 line[i] = c;
+	// 	 ++i;
 	// }
 	line[i] = '\0';
 	return i;
@@ -42,7 +42,7 @@ void reverse(char to[], char from[], int limit) {
 		to[j] = from[i];
 }
 
-/* clear: clear s after use ~> set all its elements' value up to limit to '\0' */
+/* clear: clear s after use ~> set all its elements' value, up to limit, to '\0' */
 void clear(char s[], int limit) {
 	for (int i = 0; i < limit; i++)
 		s[i] = '\0';
