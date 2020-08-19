@@ -27,17 +27,22 @@ int main() {
 /* getline: read a line into s, returns length */
 int get_line(char s[], int limit) {
 	int c, i, j;
-	for(i = 0; (c = getchar()) != EOF && c != '\n'; ++i) {
-		if (i > limit - 2)
+	for(i = 0, j = 0; (c = getchar()) != EOF && c != '\n'; ++i) {
+		if (i > limit - 2) // ensures we are within the limit of MAXLINE
 			continue;
-		s[i] = c;
-		j = i; // to deal with input lines that exceed MAXLINE
+		j = i;
+		s[j] = c;
 	}
 
+	// increment j because when we encounter '\n' or EOF
+	// i is incremented, and we break out of the loop so
+	// j is never incremented or set to the (current) value of i
+	++j;
 	if (c == '\n') {
 		s[j] = c;
-		++j;
+		++i, ++j; // increment to carter for the null character ~ '\0'
 	}
+
 	s[j] = '\0';
 	return i;
 }
