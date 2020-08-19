@@ -20,15 +20,22 @@ int main() {
 			++nw;
 		}
 	}
-	printf("lines: %d, words: %d, characters: %d\n", nl, nw, nc);
+	// lines, words characters
+	printf("%3d %3d %3d\n", nl, nw, nc);
 	return 0;
 }
 
 /**
- * How to test the program? 
- *      Test it against a 'test' file e.g data.txt that contains some input.
- * Bug:
- *  (+) The program considers a line with an input such as: "me (or you)" to be 
- *      made up of 3 distinct words, '(or' is considered a word, so is 'you)'.
- *      The definition of what constitutes/makes a 'word' should be refined.
+ * Test data:
+ *  (+) no input                                 | output: 0 0 0
+ *  (+) one-character word                       | output: 1 1 2
+ *  (+) 2 one-character words, one word per line | output: 2 2 4
+ *
+ * Input that may uncover bugs:
+ *  (+) no input
+ *  (+) no words, just newlines
+ *  (+) no words, just blanks, tabs and newlines
+ *  .
+ *  .
+ *  etc
  */
