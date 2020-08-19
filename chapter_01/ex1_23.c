@@ -16,7 +16,7 @@ int main() {
 	return 0;
 }
 
-/* clear: read each character, remove comment if any */
+/* remove: read each character, remove comment if any */
 void rcomment(int current) {
 	int next; // the next character
 	if (current == '/') { // we may have the start of a comment
