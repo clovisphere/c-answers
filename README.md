@@ -6,4 +6,6 @@ Contains my solutions to the exercises in [The C Programming Language, 2nd Editi
 
 The below command can be used on any of the _.c_ file found in the chapters' folders.
 
-`gcc -Wall -std=c17 -o DESIRED_OUTPUT_FILE_NAME SOURCE_CODE.c`
+```c
+$ gcc -Wall -std=c17 -o DESIRED_OUTPUT_FILE_NAME SOURCE_CODE.c
+```
